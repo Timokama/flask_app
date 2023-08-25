@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Edit</title>
+    </head>
+<body>
+<div>
+<form method="post">
+    <p>
+        <label for="name">Name</label>
+        <input type="text" name="name"
+               value={{ student.name }}
+               placeholder="index">
+        </input>
+    <p>
+        <label for="city">City</label>
+        <input type="text" name="city"
+               value={{ student.city }}
+               placeholder="name">
+        </input>
+    </p>
+    <p>
+        <label for="phone">Phone</label>
+        <input type="text" name="phone"
+               value={{ student.phone }}>
+        </input>
+    </p>
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+    <form method="POST"
+                action="{{ url_for('delete', student_id=student.id) }}">
+            <input type="submit" value="Delete"
+                onclick="return confirm('Are you sure you want to delete this entry?')">
+            </form>
+</div>
+</form>
+</body>
+</html>
