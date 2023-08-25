@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title"><h1>{% block title %} Latest Student {% endblock %}</h1></span>
+    <div class="content">
+                {% for student in students %}
+                    <div class="student">
+                        <i><b>
+                            ({{ student.id }})
+                            <a href="{{ url_for('student', student_id=student.id) }}">{{ student.firstname }} {{ student.lastname }}</a>
+                        </b></i>
+                        <p>{{ student.email }}</p>
+                        <p>{{ student.course }}</p>
+                        <form method="POST" action="{{ url_for('delete',student_id=student.id) }}">
+                            <input type="submit" value="Delete student" onclick="return confirm('Are you sure you want to delete this entry?')">
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+{% endblock %}

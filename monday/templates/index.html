@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Today</title>
+        <style>
+            table, th, td {
+               border: 1px solid;
+            }
+            </style>
+    </head>
+    <body>
+        <h2>Sample database</h2>
+        <a href="{{ url_for('create') }}"> Create New Member</a>
+        <div>
+        <table>
+            <thead>
+               <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+               </tr>
+            </thead>
+   
+            <tbody>
+               {% for name in names %}
+                  <tr>
+                     <td> <a href="{{ url_for('name', name_id = name.id) }}">{{ name.id }}</a></td>
+                     <td>{{ name.name }}</td>
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+        </div>
+        <p>I Love 💖 This Mind Game 🎓🏀💻</p>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<span class="title"><h1>{%block title %} {{ hostel.room }} {%endblock%}</h1></span>
+<div class="content">
+    <div class="hostel">
+        <p><b>#{{ hostel.id }}</b></p>
+        <b>
+            <p class="name">{{ hostel.room }}</p>
+        </b>
+        <hr>
+        <h3>Students</h3>
+        <div class="stusent">
+            <form method="post">
+                <p>
+                    <input type="text" name="name"
+                                placeholder="Full name">
+                    </input>
+                </p>
+            
+                <p>
+                    <input type="text" name="email"
+                                placeholder="email"></input>
+                </p>
+    
+                <p>
+                    <input type="text" name="course"
+                                placeholder="course"></input>
+                </p>
+                <p>
+                    <button type="submit">Add Student</button>
+                </p>
+            </form>
+        </div>
+        {% for student in hostel.students %}
+            <div class="student">
+                <p>{{ student.id }}</p>
+                <p>{{ student.name }}</p>
+                <p>{{ student.email }}</p>
+                <p>{{ student.course }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

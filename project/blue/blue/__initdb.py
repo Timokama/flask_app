@@ -1,0 +1,16 @@
+from app import db, Student, Hostel
+db.drop_all()
+db.create_all()
+room1 = Hostel(room = 'A1.1')
+room2 = Hostel(room = 'A1.2') 
+room3 = Hostel(room = 'A1.3') 
+student1 = Student(firstname='Timothy', lastname='Kamau', email='timokama099@gmail.com', course = 'Dipploma in ICT', hostel=room1)
+student2 = Student(firstname='James', lastname='Kamau', email='example@gmail.com', course = 'Dipploma in ICT', hostel=room1)       
+student3 = Student(firstname='Kelvin', lastname='Kirathe', email='mail@gmail.com', course = 'Dipploma in ICT', hostel=room2) 
+student4 = Student(firstname='Mark', lastname='Waweru', email='mark@gmail.com', course = 'Dipploma in ICT', hostel=room2)    
+student5 = Student(firstname='James', lastname='mwangi', email='james@gmail.com', course = 'Dipploma in ICT', hostel=room3) 
+student6 = Student(firstname='Samuel', lastname='Ritho', email='sam@gmail.com', course = 'Dipploma in ICT', hostel=room3)
+
+db.session.add_all([room1, room2, room3]) 
+db.session.add_all([student1, student2, student3, student4, student5, student6])
+db.session.commit()

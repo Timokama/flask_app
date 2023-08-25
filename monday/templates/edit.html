@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Edit</title>
+    </head>
+<body>
+<div>
+<form method="post">
+    <p>
+        <label for="id">id</label>
+        <input type="text" name="id"
+               value={{ name.id }}
+               placeholder="index">
+        </input>
+    <p>
+        <label for="name">Name</label>
+        <input type="text" name="name"
+               value={{ name.name }}
+               placeholder="name">
+        </input>
+    </p>
+    <p>
+        <label for="score">score</label>
+        <input type="text" name="score"
+               value={{ score.score }}>
+        </input>
+    </p>
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+    <form method="POST"
+                action="{{ url_for('delete', name_id=name.id) }}">
+            <input type="submit" value="Delete"
+                onclick="return confirm('Are you sure you want to delete this entry?')">
+            </form>
+</div>
+</form>
+</body>
+</html>

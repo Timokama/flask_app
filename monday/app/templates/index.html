@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            welcome on Monday
+        </title>
+    </head>
+    <body>
+        {% if greet %}
+        <p style="color: chartreuse;">{{ hello }}
+            <em style="color:red; font-size:1em;">{{ name }}</em> 
+        </p>
+        
+        {% else %}
+        Hello Mr. Nobody
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content     %}
+    <h1 class="title">{% block title %} Hostels {% endblock %}</h1>
+    <div class="content">
+        {% for hostel in hostels  %}
+            <div class="hostel">
+                <p><b>Unit {{ hostel.id }}</b></p>
+                <b>
+                    <p class="name">
+                        <a href="{{ url_for('hostel', hostel_id=hostel.id)}}"> 
+                            {{ hostel.room }}
+                        </a>
+                    </p>
+                </b>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
